@@ -14,7 +14,7 @@
 			<tr>	
 				<td><h2>${toot.tootsbody }</h2></td>	
 				<td>${toot.tootssender }</td>	
-				<td>Jan 1st, 5pm</td>
+				<td><fmt:formatDate value="${toot.tootsdatetime}" pattern="MMM dd, YYYY  HH:mm"/></td>
 			</tr>
 		</c:forEach>
 	</table>
