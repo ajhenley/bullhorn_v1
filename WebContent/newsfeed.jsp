@@ -5,18 +5,24 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bullhorn Newsfeed</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Bullhorn Newsfeed</title><!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 </head>
 <body>
-	<table>
+	<div class="container">
 		<c:forEach var="toot" items="${toots}">
-			<tr>	
-				<td><h2>${toot.tootsbody }</h2></td>	
-				<td>${toot.tootssender }</td>	
-				<td><fmt:formatDate value="${toot.tootsdatetime}" pattern="MMM dd, YYYY  HH:mm"/></td>
-			</tr>
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    ${toot.tootsbody }
+			  </div>
+			  <div class="panel-footer"><b>${toot.tootssender }</b> - <fmt:formatDate value="${toot.tootsdatetime}" pattern="MMM dd, YYYY  HH:mm"/></div>
+			</div>
 		</c:forEach>
-	</table>
+	</div>
 </body>
 </html>
